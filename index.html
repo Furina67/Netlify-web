@@ -3,171 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Furina | Documentation</title>
+    <title>Furina | Home</title>
     <style>
         :root {
             --bg-dark: #090b10;
-            --bg-card: #131620;
-            --bg-hover: #1c2130;
             --primary: #00c3ff;
-            --primary-dim: rgba(0, 195, 255, 0.1);
+            --primary-dim: rgba(0, 195, 255, 0.15);
             --text-main: #ffffff;
             --text-muted: #9ca3af;
             --border: #2d3342;
-            --success: #10b981;
             --gold: #ffd700;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-        body { background-color: var(--bg-dark); color: var(--text-main); line-height: 1.6; }
+        body { background-color: var(--bg-dark); color: var(--text-main); height: 100vh; display: flex; flex-direction: column; }
 
-        /* Navigation */
+        /* Navbar */
         nav {
             display: flex; justify-content: space-between; align-items: center;
-            padding: 1.2rem 5%; background: rgba(9, 11, 16, 0.95);
-            border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100;
-            backdrop-filter: blur(10px);
+            padding: 1.5rem 5%; background: rgba(9, 11, 16, 0.9);
+            border-bottom: 1px solid var(--border); position: fixed; width: 100%; top: 0; backdrop-filter: blur(10px); z-index: 100;
         }
         .logo { font-size: 1.5rem; font-weight: 800; color: var(--text-main); text-decoration: none; }
         .logo span { color: var(--primary); }
-        .nav-right { display: flex; align-items: center; gap: 20px; }
-        .nav-link { color: var(--text-muted); text-decoration: none; font-weight: 500; transition: 0.3s; }
-        .nav-link:hover { color: var(--text-main); }
+        .nav-links { display: flex; gap: 20px; }
+        .nav-link { color: var(--text-muted); text-decoration: none; font-weight: 600; transition: 0.3s; }
+        .nav-link:hover { color: var(--primary); }
+        .gold-link { color: var(--gold) !important; }
+
+        /* Hero Section */
+        .hero {
+            flex: 1; display: flex; align-items: center; justify-content: center; text-align: center;
+            padding: 0 2rem; background: radial-gradient(circle at center, rgba(0, 195, 255, 0.05) 0%, transparent 70%);
+            margin-top: 60px;
+        }
+        .hero-content { max-width: 800px; }
         
-        /* Special Gold Link for Premium */
-        .gold-link { color: var(--gold) !important; font-weight: 700; }
-        .gold-link:hover { text-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
-
-        .btn-pill {
-            background: var(--primary-dim); color: var(--primary); padding: 8px 20px;
-            border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.9rem;
-            border: 1px solid transparent; transition: 0.3s;
+        .hero-banner {
+            width: 100%; max-width: 700px; border-radius: 20px; border: 1px solid var(--border);
+            box-shadow: 0 0 30px rgba(0, 195, 255, 0.15); margin-bottom: 2rem; transition: transform 0.3s ease;
         }
-        .btn-pill:hover { background: var(--primary); color: #fff; box-shadow: 0 0 15px var(--primary-dim); }
+        .hero-banner:hover { transform: scale(1.02); }
 
-        /* Container & Grid */
-        .container { max-width: 1200px; margin: 0 auto; padding: 4rem 2rem; }
-        .section-header { text-align: center; margin-bottom: 3rem; }
-        .title-red { color: var(--primary); font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; }
-        .subtitle { color: var(--text-muted); max-width: 700px; margin: 0 auto; }
-        .highlight { color: var(--primary); font-weight: 700; }
+        h1 { font-size: 3.5rem; line-height: 1.2; margin-bottom: 1rem; }
+        h1 span { color: var(--primary); }
+        p { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 2rem; }
 
-        .nav-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
-        .nav-card {
-            background: var(--bg-card); border: 1px solid var(--border); padding: 2rem;
-            border-radius: 16px; text-decoration: none; display: block; transition: 0.3s;
+        .btn-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .btn {
+            padding: 14px 35px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1rem;
+            transition: 0.3s; border: 1px solid transparent;
         }
-        .nav-card:hover { transform: translateY(-5px); border-color: var(--primary); background: var(--bg-hover); }
-        .icon-box {
-            width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center;
-            font-size: 1.5rem; margin-bottom: 1.5rem; color: white;
-        }
-        .nav-card h3 { color: var(--text-main); margin-bottom: 0.5rem; font-size: 1.25rem; }
-        .nav-card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; }
-        .read-more { color: var(--primary); font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 5px; }
+        .btn-primary { background: var(--primary); color: #000; }
+        .btn-primary:hover { background: #33d1ff; box-shadow: 0 0 20px rgba(0, 195, 255, 0.4); }
+        .btn-secondary { background: var(--primary-dim); color: var(--primary); border-color: rgba(0,195,255,0.2); }
+        .btn-secondary:hover { background: rgba(0, 195, 255, 0.25); border-color: var(--primary); }
 
-        /* Footer */
-        footer { background: #050608; padding: 4rem 2rem 2rem; border-top: 1px solid var(--border); margin-top: 4rem; }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
-        .footer-col h4 { color: var(--primary); margin-bottom: 1.5rem; }
-        .footer-links a { display: block; color: var(--text-muted); text-decoration: none; margin-bottom: 0.8rem; transition: 0.2s; }
-        .footer-links a:hover { color: var(--text-main); }
-        .stat-row { display: flex; justify-content: space-between; margin-bottom: 0.8rem; color: var(--text-muted); }
-        .stat-val { font-weight: 700; color: var(--text-main); }
-        .stat-val.green { color: var(--success); }
-        .footer-bottom { text-align: center; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.9rem; }
+        /* Stats Footer (Hidden on mobile generally, but good for PC) */
+        .stats-bar {
+            display: flex; gap: 2rem; justify-content: center; margin-top: 3rem; color: var(--text-muted); font-size: 0.9rem;
+        }
+        .stat b { color: var(--text-main); }
     </style>
 </head>
 <body>
 
     <nav>
         <a href="index.html" class="logo">🌊 Furina<span>Bot</span></a>
-        <div class="nav-right">
+        <div class="nav-links">
+            <a href="about.html" class="nav-link">About</a>
             <a href="commands.html" class="nav-link">Commands</a>
-            <a href="premium.html" class="nav-link gold-link">Premium</a> <a href="https://discord.com/oauth2/authorize?client_id=1423421449028239370&permissions=8&scope=bot" target="_blank" class="btn-pill">Invite Bot</a>
+            <a href="premium.html" class="nav-link gold-link">Premium</a>
+            <a href="legal.html" class="nav-link">Legal</a>
         </div>
     </nav>
 
-    <div class="container">
-        <div class="section-header">
-            <h1 class="title-red">Furina Documentation</h1>
-            <p class="subtitle">The ultimate multipurpose Discord bot. Secure, Managed, Thriving.</p>
-        </div>
+    <section class="hero">
+        <div class="hero-content">
+            <a href="about.html">
+                <img src="https://i.ibb.co/yBPJ0kwM/Untitled5-20251227225244.png" alt="Furina Banner" class="hero-banner">
+            </a>
 
-        <div style="margin-bottom: 4rem; color: #d1d5db;">
-            <h2 style="margin-bottom: 1rem; font-size: 1.8rem;">Meet Furina</h2>
-            <p style="margin-bottom: 1.5rem;">
-                Welcome to <span class="highlight">Furina</span>. Designed with intelligent systems, Furina isn't just a bot, it's your server's guardian.
-            </p>
-            <p>
-                From <span class="highlight">Antinuke Security</span> to <span class="highlight">Automoderation</span> and <span class="highlight">Fun Games</span>, Furina does it all.
-            </p>
-        </div>
-
-        <div style="width: 100%; margin-bottom: 4rem; display: flex; justify-content: center;">
-            <img src="https://i.ibb.co/yBPJ0kwM/Untitled5-20251227225244.png" alt="Welcome to Furina" style="width: 100%; height: auto; border-radius: 20px; border: 1px solid var(--border); box-shadow: 0 0 20px rgba(0, 195, 255, 0.2);">
-        </div>
-
-        <h2 class="title-red" style="text-align: center; font-size: 2rem;">Navigation</h2>
-        
-        <div class="nav-grid">
+            <h1>Level Up With <span>Furina</span></h1>
+            <p>The ultimate multipurpose Discord companion. Security, moderation, games, and AI—all in one place.</p>
             
-            <a href="commands.html" class="nav-card">
-                <div class="icon-box" style="background: #8b5cf6;">_></div>
-                <h3>Commands</h3>
-                <p>View the full list of commands.</p>
-                <div class="read-more">View Commands →</div>
-            </a>
-
-            <a href="premium.html" class="nav-card" style="border-color: rgba(255, 215, 0, 0.3);">
-                <div class="icon-box" style="background: var(--gold); color: #000;">💎</div>
-                <h3>Premium</h3>
-                <p>Get exclusive perks and support us.</p>
-                <div class="read-more" style="color: var(--gold);">Get Premium →</div>
-            </a>
-
-            <a href="legal.html" class="nav-card">
-                <div class="icon-box" style="background: #f97316;">📄</div>
-                <h3>Legal</h3>
-                <p>Terms of Service & Privacy Policy.</p>
-                <div class="read-more">Read Terms →</div>
-            </a>
-            
-        </div>
-    </div>
-
-    <footer>
-        <div class="footer-grid">
-            <div class="footer-col">
-                <div class="logo" style="margin-bottom: 1rem;">🌊 Furina<span>Bot</span></div>
-                <p style="color: var(--text-muted); font-size: 0.9rem;">The ultimate multipurpose Discord bot.</p>
+            <div class="btn-group">
+                <a href="https://discord.com/oauth2/authorize?client_id=1423421449028239370&permissions=8&scope=bot" target="_blank" class="btn btn-primary">Add to Server</a>
+                <a href="about.html" class="btn btn-secondary">What is Furina?</a>
             </div>
-            <div class="footer-col">
-                <h4>Quick Links</h4>
-                <div class="footer-links">
-                    <a href="commands.html">Commands</a>
-                    <a href="premium.html" style="color: var(--gold);">Premium</a>
-                    <a href="legal.html">Legal</a>
-                </div>
-            </div>
-            <div class="footer-col">
-                <h4>Statistics</h4>
-                <div class="stat-row"><span>Servers:</span><span class="stat-val" id="server-count">...</span></div>
-                <div class="stat-row"><span>Users:</span><span class="stat-val" id="user-count">...</span></div>
-                <div class="stat-row"><span>Uptime:</span><span class="stat-val green">99.9%</span></div>
+
+            <div class="stats-bar">
+                <div class="stat">Servers: <b id="server-count">...</b></div>
+                <div class="stat">Users: <b id="user-count">...</b></div>
             </div>
         </div>
-        <div class="footer-bottom">&copy; 2026 Furina Development.</div>
-    </footer>
+    </section>
 
     <script>
-        // ==========================================
-        // EDIT YOUR REAL STATS HERE
-        // ==========================================
-        const myServers = "94+";   // Change this number
-        const myUsers = "4000+";    // Change this number
-        // ==========================================
-
+        const myServers = "15+";   // Change this
+        const myUsers = "400+";    // Change this
         document.getElementById('server-count').innerText = myServers;
         document.getElementById('user-count').innerText = myUsers;
     </script>
