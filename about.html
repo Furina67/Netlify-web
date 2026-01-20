@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furina | Home</title>
+    <style>
+        :root {
+            /* Furina Theme Palette */
+            --bg-dark: #090b10;
+            --bg-card: #131620;
+            --bg-hover: #1c2130;
+            --primary: #00c3ff;
+            --primary-dim: rgba(0, 195, 255, 0.1);
+            --text-main: #ffffff;
+            --text-muted: #9ca3af;
+            --border: #2d3342;
+            --success: #10b981;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: var(--bg-dark); color: var(--text-main); line-height: 1.6; }
+
+        /* Navigation */
+        nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1.2rem 5%; background: rgba(9, 11, 16, 0.95);
+            border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+        .logo { font-size: 1.5rem; font-weight: 800; color: var(--text-main); text-decoration: none; display: flex; align-items: center; gap: 10px; }
+        .logo span { color: var(--primary); }
+        .nav-right { display: flex; align-items: center; gap: 20px; }
+        .nav-link { color: var(--text-muted); text-decoration: none; font-weight: 500; transition: 0.3s; }
+        .nav-link:hover { color: var(--text-main); }
+        .btn-pill {
+            background: var(--primary-dim); color: var(--primary); padding: 8px 20px;
+            border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.9rem;
+            border: 1px solid transparent; transition: 0.3s;
+        }
+        .btn-pill:hover { background: var(--primary); color: #fff; box-shadow: 0 0 15px var(--primary-dim); }
+
+        /* Hero Section */
+        .container { max-width: 1200px; margin: 0 auto; padding: 4rem 2rem; }
+        .section-header { text-align: center; margin-bottom: 3rem; }
+        .title-red { color: var(--primary); font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; }
+        .subtitle { color: var(--text-muted); max-width: 700px; margin: 0 auto; }
+        .highlight { color: var(--primary); font-weight: 700; }
+
+        /* Navigation Cards */
+        .nav-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+        .nav-card {
+            background: var(--bg-card); border: 1px solid var(--border); padding: 2rem;
+            border-radius: 16px; text-decoration: none; display: block; transition: 0.3s;
+        }
+        .nav-card:hover { transform: translateY(-5px); border-color: var(--primary); background: var(--bg-hover); }
+        .icon-box {
+            width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem; margin-bottom: 1.5rem; color: white;
+        }
+        .nav-card h3 { color: var(--text-main); margin-bottom: 0.5rem; font-size: 1.25rem; }
+        .nav-card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; }
+        .read-more { color: var(--primary); font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 5px; }
+
+        /* Footer */
+        footer { background: #050608; padding: 4rem 2rem 2rem; border-top: 1px solid var(--border); margin-top: 4rem; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
+        .footer-col h4 { color: var(--primary); margin-bottom: 1.5rem; }
+        .footer-links a { display: block; color: var(--text-muted); text-decoration: none; margin-bottom: 0.8rem; transition: 0.2s; }
+        .footer-links a:hover { color: var(--text-main); }
+        .stat-row { display: flex; justify-content: space-between; margin-bottom: 0.8rem; color: var(--text-muted); }
+        .stat-val { font-weight: 700; color: var(--text-main); }
+        .stat-val.green { color: var(--success); }
+        .footer-bottom { text-align: center; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">🌊 Furina<span>Bot</span></a>
+        <div class="nav-right">
+            <a href="commands.html" class="nav-link">Commands</a>
+            <a href="https://discord.com/oauth2/authorize?client_id=1423421449028239370&permissions=8&scope=bot" target="_blank" class="btn-pill">Invite Bot</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="section-header">
+            <h1 class="title-red">Furina Documentation</h1>
+            <p class="subtitle">Welcome to the comprehensive guide for Furina - The Ultimate Multipurpose Discord Bot.</p>
+        </div>
+
+        <div style="margin-bottom: 4rem; color: #d1d5db;">
+            <h2 style="margin-bottom: 1rem; font-size: 1.8rem;">Meet Furina</h2>
+            <p style="margin-bottom: 1.5rem;">
+                Welcome to <span class="highlight">Furina</span>, the all-in-one Discord bot built to secure, manage, and elevate your server. Designed with intelligent systems, Furina isn't just a bot, it's your server's guardian and companion.
+            </p>
+            <p style="margin-bottom: 1.5rem;">
+                At its core, <span class="highlight">Security</span> comes first. Furina protects your community from raids and spam using its Antinuke System. With constant monitoring of roles and permissions, threats are stopped before they cause damage.
+            </p>
+            <p>
+                Beyond security, Furina delivers powerful <span class="highlight">Automoderation</span> and <span class="highlight">Moderation Tools</span> alongside fun features like <span class="highlight">Chess, Mines, and Giveaways</span>. With Furina by your side, your server stays secure, efficient, and thriving.
+            </p>
+        </div>
+
+        <div style="width: 100%; margin-bottom: 4rem; display: flex; justify-content: center;">
+            <img src="https://i.ibb.co/yBPJ0kwM/Untitled5-20251227225244.png" alt="Welcome to Furina" style="width: 100%; height: auto; border-radius: 20px; border: 1px solid var(--border); box-shadow: 0 0 20px rgba(0, 195, 255, 0.2);">
+        </div>
+
+        <h2 class="title-red" style="text-align: center; font-size: 2rem;">Navigation</h2>
+        <p class="subtitle" style="text-align: center;">Explore our detailed documentation covering various functions and commands:</p>
+
+        <div class="nav-grid">
+            <a href="#" class="nav-card">
+                <div class="icon-box" style="background: var(--primary);">ℹ️</div>
+                <h3>What is Furina?</h3>
+                <p>Learn what Furina is and explore its full list of features.</p>
+                <div class="read-more">Learn More →</div>
+            </a>
+
+            <a href="#" class="nav-card">
+                <div class="icon-box" style="background: var(--success);">⚙️</div>
+                <h3>How to Setup?</h3>
+                <p>Follow our easy and quick setup guide.</p>
+                <div class="read-more">Get Started →</div>
+            </a>
+
+            <a href="commands.html" class="nav-card">
+                <div class="icon-box" style="background: #8b5cf6;">_></div>
+                <h3>Commands</h3>
+                <p>Discover all of Furina's commands categorized for easy access.</p>
+                <div class="read-more">View Commands →</div>
+            </a>
+
+            <a href="legal.html" class="nav-card">
+                <div class="icon-box" style="background: #f97316;">📄</div>
+                <h3>Terms & Conditions</h3>
+                <p>Clear guidelines for using Furina safely and responsibly.</p>
+                <div class="read-more">Read Terms →</div>
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="logo" style="margin-bottom: 1rem;">🌊 Furina<span>Bot</span></div>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">The ultimate multipurpose Discord bot.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <div class="footer-links">
+                    <a href="https://discord.com/oauth2/authorize?client_id=1423421449028239370&permissions=8&scope=bot" target="_blank">Add Bot</a>
+                    <a href="commands.html">Commands</a>
+                    <a href="legal.html">Legal</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Statistics</h4>
+                <div class="stat-row"><span>Servers:</span><span class="stat-val">1.2K</span></div>
+                <div class="stat-row"><span>Users:</span><span class="stat-val">450K</span></div>
+                <div class="stat-row"><span>Uptime:</span><span class="stat-val green">99.9%</span></div>
+            </div>
+        </div>
+        <div class="footer-bottom">&copy; 2026 Furina Development. All rights reserved.</div>
+    </footer>
+
+</body>
+</html>

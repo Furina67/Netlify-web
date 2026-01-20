@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furina | Legal</title>
+    <style>
+        :root {
+            /* Furina Theme Palette */
+            --bg-dark: #090b10;
+            --bg-card: #131620;
+            --bg-hover: #1c2130;
+            --primary: #00c3ff;
+            --primary-dim: rgba(0, 195, 255, 0.1);
+            --text-main: #ffffff;
+            --text-muted: #9ca3af;
+            --border: #2d3342;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: var(--bg-dark); color: var(--text-main); line-height: 1.6; }
+
+        /* Navigation */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 5%; background: rgba(9, 11, 16, 0.95); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; backdrop-filter: blur(10px); }
+        .logo { font-size: 1.5rem; font-weight: 800; color: var(--text-main); text-decoration: none; display: flex; align-items: center; gap: 10px; }
+        .logo span { color: var(--primary); }
+        .nav-right { display: flex; align-items: center; gap: 20px; }
+        .nav-link { color: var(--text-muted); text-decoration: none; font-weight: 500; transition: 0.3s; }
+        .nav-link:hover { color: var(--text-main); }
+        .btn-pill { background: var(--primary-dim); color: var(--primary); padding: 8px 20px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.9rem; border: 1px solid transparent; transition: 0.3s; }
+        .btn-pill:hover { background: var(--primary); color: #fff; box-shadow: 0 0 15px var(--primary-dim); }
+
+        /* Content */
+        .container { max-width: 900px; margin: 0 auto; padding: 4rem 2rem; }
+        .section-header { text-align: center; margin-bottom: 4rem; }
+        .title-red { color: var(--primary); font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; }
+        .subtitle { color: var(--text-muted); max-width: 700px; margin: 0 auto; }
+
+        .legal-block { background: var(--bg-card); border: 1px solid var(--border); padding: 2.5rem; border-radius: 16px; margin-bottom: 3rem; }
+        .legal-block h2 { color: var(--primary); margin-bottom: 1.5rem; font-size: 1.8rem; border-bottom: 1px solid var(--border); padding-bottom: 10px; display: inline-block; }
+        .legal-block h3 { color: var(--text-main); margin: 1.5rem 0 0.5rem; font-size: 1.2rem; }
+        .legal-block p { color: var(--text-muted); margin-bottom: 1rem; }
+        .legal-block ul { list-style-position: inside; color: var(--text-muted); margin-bottom: 1rem; }
+        .legal-block li { margin-bottom: 0.5rem; }
+
+        footer { text-align: center; padding: 2rem; margin-top: 4rem; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">🌊 Furina<span>Bot</span></a>
+        <div class="nav-right">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="commands.html" class="nav-link">Commands</a>
+            <a href="https://discord.com/oauth2/authorize?client_id=1423421449028239370&permissions=8&scope=bot" target="_blank" class="btn-pill">Invite Bot</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="section-header">
+            <h1 class="title-red">Legal Information</h1>
+            <p class="subtitle">Transparency is key. Please read our Terms of Service and Privacy Policy carefully.</p>
+        </div>
+
+        <div class="legal-block" id="terms">
+            <h2>Terms of Service</h2>
+            <p><strong>Effective Date:</strong> December 2025</p>
+            <h3>1. Acceptance of Terms</h3>
+            <p>By inviting Furina ("the Bot") to your Discord server or using its features, you agree to these Terms of Service. If you do not agree, please do not use the Bot.</p>
+            <h3>2. Usage License</h3>
+            <p>You are granted a limited, non-exclusive, revocable license to use the Bot for your personal or community Discord server. You may not use the Bot to violate Discord's Terms of Service or Community Guidelines.</p>
+            <h3>3. Availability</h3>
+            <p>We reserve the right to modify, suspend, or discontinue the Bot at any time without notice.</p>
+        </div>
+
+        <div class="legal-block" id="privacy">
+            <h2>Privacy Policy</h2>
+            <p><strong>Last updated:</strong> December 2025</p>
+
+            <h3>1. Overview</h3>
+            <p>This Privacy Policy explains how Furina collects, uses, and protects data when used in Discord servers. The Bot operates only within servers where it is explicitly invited and does not function outside of Discord.</p>
+
+            <h3>2. Data Collected</h3>
+            <p>The Bot may temporarily process the following types of data provided by Discord’s API:</p>
+            <ul>
+                <li><strong>User IDs, Server IDs, Channel IDs:</strong> Required for core functionality.</li>
+                <li><strong>Message content:</strong> Only for server-enabled features such as moderation commands, AFK functionality, counting systems, and optional message-based utilities.</li>
+                <li><strong>Member data:</strong> Roles, join/leave state, nickname.</li>
+                <li><strong>Presence data:</strong> Custom status text for opt-in status-based role features.</li>
+            </ul>
+            <p>The Bot does not access or process direct messages.</p>
+
+            <h3>3. How Data Is Used</h3>
+            <p>Data is used strictly to provide the Bot’s intended functionality, including:</p>
+            <ul>
+                <li>Executing slash commands and interactions.</li>
+                <li>Managing server configurations and roles.</li>
+                <li>Operating moderation and utility features.</li>
+                <li>Providing interactive games and server tools.</li>
+            </ul>
+            <p>Data is not used for analytics, profiling, advertising, or machine learning.</p>
+
+            <h3>4. Data Storage and Retention</h3>
+            <ul>
+                <li><strong>Message content</strong> is not stored permanently. Any message-related data is kept only in short-term memory and cleared automatically.</li>
+                <li><strong>Member and presence data</strong> is processed in real time and not retained beyond operational needs.</li>
+                <li>No data is stored outside of Discord unless explicitly required for configuration (such as server settings).</li>
+            </ul>
+
+            <h3>5. Data Sharing</h3>
+            <p>The Bot does not sell, share, or distribute user data to third parties. Data is accessed only by the Bot to provide its services within Discord servers.</p>
+
+            <h3>6. User Control and Opt-Out</h3>
+            <p>Server administrators can enable or disable features at any time. Users may opt out of certain features (such as presence-based role systems) by server configuration or role permissions.</p>
+
+            <h3>7. Security</h3>
+            <p>Reasonable measures are taken to protect data processed by the Bot. The Bot follows Discord’s Developer Terms of Service and API policies.</p>
+
+            <h3>8. Changes to This Policy</h3>
+            <p>This Privacy Policy may be updated as features evolve. Continued use of the Bot after updates indicates acceptance of the revised policy.</p>
+
+            <h3>9. Contact</h3>
+            <p>For questions or concerns regarding this Privacy Policy, please contact <strong>@twin.67</strong> via Discord.</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footer-bottom">&copy; 2026 Furina Development.</div>
+    </footer>
+
+</body>
+</html>

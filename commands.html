@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furina | Commands</title>
+    <style>
+        :root {
+            --bg-dark: #090b10;
+            --bg-card: #131620;
+            --bg-hover: #1c2130;
+            --primary: #00c3ff;
+            --primary-dim: rgba(0, 195, 255, 0.1);
+            --text-main: #ffffff;
+            --text-muted: #9ca3af;
+            --border: #2d3342;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: var(--bg-dark); color: var(--text-main); line-height: 1.6; }
+
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 5%; background: rgba(9, 11, 16, 0.95); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; backdrop-filter: blur(10px); }
+        .logo { font-size: 1.5rem; font-weight: 800; color: var(--text-main); text-decoration: none; display: flex; align-items: center; gap: 10px; }
+        .logo span { color: var(--primary); }
+        .nav-right { display: flex; align-items: center; gap: 20px; }
+        .nav-link { color: var(--text-muted); text-decoration: none; font-weight: 500; }
+        .btn-pill { background: var(--primary-dim); color: var(--primary); padding: 8px 20px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.9rem; border: 1px solid transparent; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 4rem 2rem; }
+        .section-header { text-align: center; margin-bottom: 3rem; }
+        .title-red { color: var(--primary); font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; }
+        .subtitle { color: var(--text-muted); max-width: 700px; margin: 0 auto; }
+
+        .search-bar { width: 100%; padding: 1rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; color: white; margin-bottom: 2rem; font-size: 1rem; }
+        
+        .cmd-category { margin-bottom: 2.5rem; }
+        .category-title { color: var(--primary); font-size: 1.2rem; margin-bottom: 1rem; font-weight: 700; border-bottom: 1px solid var(--border); padding-bottom: 10px; display: inline-block; }
+
+        /* Accordion Style */
+        details { background: var(--bg-card); border: 1px solid var(--border); margin-bottom: 1rem; border-radius: 8px; overflow: hidden; transition: 0.3s; }
+        details[open] { border-color: var(--primary); }
+        summary { padding: 1.2rem; cursor: pointer; font-weight: 600; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+        summary:hover { background: var(--bg-hover); }
+        summary::after { content: '+'; font-size: 1.5rem; color: var(--text-muted); }
+        details[open] summary::after { content: '-'; color: var(--primary); }
+        .cmd-content { padding: 1.2rem; border-top: 1px solid var(--border); background: rgba(0,0,0,0.2); font-size: 0.9rem; }
+        .cmd-field { margin-bottom: 10px; }
+        .cmd-label { color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; font-weight: 700; display: block; margin-bottom: 4px; }
+        .cmd-code { color: var(--primary); font-family: monospace; background: rgba(0, 195, 255, 0.1); padding: 2px 6px; border-radius: 4px; display: inline-block; margin-bottom: 5px;}
+
+        footer { text-align: center; padding: 2rem; margin-top: 4rem; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">🌊 Furina<span>Bot</span></a>
+        <div class="nav-right">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="https://discord.com/oauth2/authorize?client_id=1423421449028239370&permissions=8&scope=bot" target="_blank" class="btn-pill">Invite Bot</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="section-header">
+            <h1 class="title-red">Commands</h1>
+            <p class="subtitle">Explore all available commands by category</p>
+        </div>
+
+        <input type="text" class="search-bar" placeholder="🔍 Search commands (Coming Soon)...">
+
+        <div class="cmd-category">
+            <div class="category-title" style="color: #f87171;">Moderation</div>
+            
+            <details><summary>ban</summary><div class="cmd-content"><div class="cmd-field"><span class="cmd-label">Description:</span>Bans a member from the server.</div><div class="cmd-field"><div class="cmd-code">ban @user [reason]</div></div></div></details>
+            <details><summary>kick</summary><div class="cmd-content"><div class="cmd-field"><span class="cmd-label">Description:</span>Kicks a member from the server.</div><div class="cmd-field"><div class="cmd-code">kick @user [reason]</div></div></div></details>
+            <details><summary>unban</summary><div class="cmd-content"><div class="cmd-field"><span class="cmd-label">Description:</span>Unbans a user.</div><div class="cmd-field"><div class="cmd-code">unban [user_id]</div></div></div></details>
+            <details><summary>to / timeout</summary><div class="cmd-content"><div class="cmd-field"><span class="cmd-label">Description:</span>Timeout a member.</div><div class="cmd-field"><div class="cmd-code">to @user [duration]</div></div></div></details>
+            <details><summary>rto</summary><div class="cmd-content"><div class="cmd-field"><span class="cmd-label">Description:</span>Remove timeout from a member.</div><div class="cmd-field"><div class="cmd-code">rto @user</div></div></div></details>
+            <details><summary>purge</summary><div class="cmd-content"><div class="cmd-field"><span class="cmd-label">Description:</span>Bulk delete messages.</div><div class="cmd-field"><div class="cmd-code">purge [amount]</div></div></div></details>
+            <details><summary>nuke</summary><div class="cmd-content"><div class="cmd-field"><span class="cmd-label">Description:</span>Delete & recreate the channel (clears history).</div><div class="cmd-field"><div class="cmd-code">nuke</div></div></div></details>
+            <details><summary>lock</summary><div class="cmd-content"><div class="cmd-field"><span class="cmd-label">Description:</span>Lock the channel.</div><div class="cmd-field"><div class="cmd-code">lock</div></div></div></details>
+            <details><summary>unlock</summary><div class="cmd-content"><div class="cmd-field"><span class="cmd-label">Description:</span>Unlock the channel.</div><div class="cmd-field"><div class="cmd-code">unlock</div></div></div></details>
+            <details><summary>hide</summary><div class="cmd-content"><div class="cmd-field"><span class="cmd-label">Description:</span>Hide the channel from members.</div><div class="cmd-field"><div class="cmd-code">hide</div></div></div></details>
+            <details><summary>unhide</summary><div class="cmd-content"><div class="cmd-field"><span class="cmd-label">Description:</span>Unhide the channel.</div><div class="cmd-field"><div class="cmd-code">unhide</div></div></div></details>
+            <details><summary>setnick</summary><div class="cmd-content"><div class="cmd-field"><span class="cmd-label">Description:</span>Set a member’s nickname.</div><div class="cmd-field"><div class="cmd-code">setnick @user [name]</div></div></div></details>
+            <details><summary>resetnick</summary><div class="cmd-content"><div class="cmd-field"><span class="cmd-label">Description:</span>Reset nickname.</div><div class="cmd-field"><div class="cmd-code">resetnick @user</div></div></div></details>
+            <details><summary>steal</summary><div class="cmd-content"><div class="cmd-field"><span class="cmd-label">Description:</span>Steal emoji or sticker.</div><div class="cmd-field"><div class="cmd-code">steal [emoji]</div></div></div></details>
+            <details><summary>say</summary><div class="cmd-content"><div class="cmd-field"><span class="cmd-label">Description:</span>Bot sends a message.</div><div class="cmd-field"><div class="cmd-code">say [message]</div></div></div></details>
+            <details><summary>/deletechannel</summary><div class="cmd-content"><div class="cmd-field"><span class="cmd-label">Description:</span>Delete the current channel.</div><div class="cmd-field"><div class="cmd-code">/deletechannel</div></div></div></details>
+        </div>
+
+        <div class="cmd-category">
+            <div class="category-title" style="color: #c084fc;">Fun & Games</div>
+
+            <details><summary>/chess</summary><div class="cmd-content"><div class="cmd-field"><span class="cmd-label">Description:</span>Play chess with other users.</div><div class="cmd-field"><div class="cmd-code">/chess @user</div></div></div></details>
+            <details><summary>blackjack</summary><div class="cmd-content"><div class="cmd-field"><span class="cmd-label">Description:</span>Play a game of blackjack.</div><div class="cmd-field"><div class="cmd-code">blackjack [amount]</div></div></div></details>
+            <details><summary>mines</summary><div class="cmd-content"><div class="cmd-field"><span class="cmd-label">Description:</span>Play a minesweeper-style game.</div><div class="cmd-field"><div class="cmd-code">mines</div></div></div></details>
+            <details><summary>ttt</summary><div class="cmd-content"><div class="cmd-field"><span class="cmd-label">Description:</span>Play Tic Tac Toe.</div><div class="cmd-field"><div class="cmd-code">ttt @user</div></div></div></details>
+            <details><summary>coinflip</summary><div class="cmd-content"><div class="cmd-field"><span class="cmd-label">Description:</span>Flip a coin.</div><div class="cmd-field"><div class="cmd-code">coinflip</div></div></div></details>
+            <details><summary>ship</summary><div class="cmd-content"><div class="cmd-field"><span class="cmd-label">Description:</span>Ships two users together.</div><div class="cmd-field"><div class="cmd-code">ship @user1 @user2</div></div></div></details>
+            <details><summary>waifu</summary><div class="cmd-content"><div class="cmd-field"><span class="cmd-label">Description:</span>Shows a random waifu.</div><div class="cmd-field"><div class="cmd-code">waifu</div></div></div></details>
+            <details><summary>husbando</summary><div class="cmd-content"><div class="cmd-field"><span class="cmd-label">Description:</span>Shows a random husbando.</div><div class="cmd-field"><div class="cmd-code">husbando</div></div></div></details>
+            <details><summary>nitro</summary><div class="cmd-content"><div class="cmd-field"><span class="cmd-label">Description:</span>Prank users with a fake Nitro link.</div><div class="cmd-field"><div class="cmd-code">nitro</div></div></div></details>
+        </div>
+
+        <div class="cmd-category">
+            <div class="category-title" style="color: #00c3ff;">Utility & Info</div>
+
+            <details><summary>botinfo</summary><div class="cmd-content"><div class="cmd-field"><span class="cmd-label">Description:</span>Display bot information & statistics.</div><div class="cmd-field"><div class="cmd-code">botinfo</div></div></div></details>
+            <details><summary>userinfo</summary><div class="cmd-content"><div class="cmd-field"><span class="cmd-label">Description:</span>Show detailed user info.</div><div class="cmd-field"><div class="cmd-code">userinfo @user</div></div></div></details>
+            <details><summary>serverinfo</summary><div class="cmd-content"><div class="cmd-field"><span class="cmd-label">Description:</span>Displays server information.</div><div class="cmd-field"><div class="cmd-code">serverinfo</div></div></div></details>
+            <details><summary>roleinfo</summary><div class="cmd-content"><div class="cmd-field"><span class="cmd-label">Description:</span>Retrieve role information.</div><div class="cmd-field"><div class="cmd-code">roleinfo @role</div></div></div></details>
+            <details><summary>av / avatar</summary><div class="cmd-content"><div class="cmd-field"><span class="cmd-label">Description:</span>Shows a user's avatar.</div><div class="cmd-field"><div class="cmd-code">av @user</div></div></div></details>
+            <details><summary>ping</summary><div class="cmd-content"><div class="cmd-field"><span class="cmd-label">Description:</span>Checks bot latency.</div><div class="cmd-field"><div class="cmd-code">ping</div></div></div></details>
+            <details><summary>membercount</summary><div class="cmd-content"><div class="cmd-field"><span class="cmd-label">Description:</span>Shows total server members.</div><div class="cmd-field"><div class="cmd-code">mc</div></div></div></details>
+            <details><summary>vote</summary><div class="cmd-content"><div class="cmd-field"><span class="cmd-label">Description:</span>Vote for the bot on supported bot lists.</div><div class="cmd-field"><div class="cmd-code">vote</div></div></div></details>
+            <details><summary>invite</summary><div class="cmd-content"><div class="cmd-field"><span class="cmd-label">Description:</span>Get the bot’s invite link.</div><div class="cmd-field"><div class="cmd-code">invite</div></div></div></details>
+        </div>
+
+        <div class="cmd-category">
+            <div class="category-title" style="color: #4ade80;">Snipe & Systems</div>
+
+            <details><summary>snipe</summary><div class="cmd-content"><div class="cmd-field"><span class="cmd-label">Description:</span>Retrieve latest deleted message.</div><div class="cmd-field"><div class="cmd-code">snipe</div></div></div></details>
+            <details><summary>snipeall</summary><div class="cmd-content"><div class="cmd-field"><span class="cmd-label">Description:</span>Retrieve all deleted messages.</div><div class="cmd-field"><div class="cmd-code">snipeall</div></div></div></details>
+            <details><summary>snipesettings</summary><div class="cmd-content"><div class="cmd-field"><span class="cmd-label">Description:</span>Configure who can use snipe.</div><div class="cmd-field"><div class="cmd-code">snipesettings</div></div></div></details>
+            
+            <details><summary>/welcome_setup</summary><div class="cmd-content"><div class="cmd-field"><span class="cmd-label">Description:</span>Interactive setup for welcome embeds.</div><div class="cmd-field"><div class="cmd-code">/welcome_setup</div></div></div></details>
+            <details><summary>vanitysetup</summary><div class="cmd-content"><div class="cmd-field"><span class="cmd-label">Description:</span>Set Vanity Keyword & role.</div><div class="cmd-field"><div class="cmd-code">vanitysetup</div></div></div></details>
+        </div>
+
+        <div class="cmd-category">
+            <div class="category-title" style="color: #facc15;">Giveaway</div>
+
+            <details><summary>gstart</summary><div class="cmd-content"><div class="cmd-field"><span class="cmd-label">Description:</span>Start a giveaway.</div><div class="cmd-field"><div class="cmd-code">gstart {duration} {winners} {prize}</div></div></div></details>
+            <details><summary>gend</summary><div class="cmd-content"><div class="cmd-field"><span class="cmd-label">Description:</span>End a giveaway early.</div><div class="cmd-field"><div class="cmd-code">gend</div></div></div></details>
+            <details><summary>greroll</summary><div class="cmd-content"><div class="cmd-field"><span class="cmd-label">Description:</span>Reroll the giveaway winner.</div><div class="cmd-field"><div class="cmd-code">greroll</div></div></div></details>
+            <details><summary>setmanager</summary><div class="cmd-content"><div class="cmd-field"><span class="cmd-label">Description:</span>Set the giveaway manager role.</div><div class="cmd-field"><div class="cmd-code">setmanager @role</div></div></div></details>
+            <details><summary>/claimtime</summary><div class="cmd-content"><div class="cmd-field"><span class="cmd-label">Description:</span>Manage claim time settings.</div><div class="cmd-field"><div class="cmd-code">/claimtime</div></div></div></details>
+        </div>
+
+        <div class="cmd-category">
+            <div class="category-title" style="color: #e879f9;">AI & Search</div>
+
+            <details><summary>Ai</summary><div class="cmd-content"><div class="cmd-field"><span class="cmd-label">Description:</span>Ask the Furina AI anything.</div><div class="cmd-field"><div class="cmd-code">Ai [question]</div></div></div></details>
+            <details><summary>/search</summary><div class="cmd-content"><div class="cmd-field"><span class="cmd-label">Description:</span>Search information from Wikipedia.</div><div class="cmd-field"><div class="cmd-code">/search [query]</div></div></div></details>
+            <details><summary>define</summary><div class="cmd-content"><div class="cmd-field"><span class="cmd-label">Description:</span>Get definitions of words.</div><div class="cmd-field"><div class="cmd-code">define [word]</div></div></div></details>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footer-bottom">&copy; 2026 Furina Development.</div>
+    </footer>
+</body>
+</html>
