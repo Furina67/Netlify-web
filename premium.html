@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furina | Premium</title>
+    <style>
+        :root {
+            --bg-dark: #090b10;
+            --bg-card: #131620;
+            --primary: #00c3ff;
+            --gold: #ffd700;
+            --text-main: #ffffff;
+            --text-muted: #9ca3af;
+            --border: #2d3342;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: var(--bg-dark); color: var(--text-main); line-height: 1.6; }
+
+        /* Navbar */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 5%; background: rgba(9, 11, 16, 0.95); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; backdrop-filter: blur(10px); }
+        .logo { font-size: 1.5rem; font-weight: 800; color: var(--text-main); text-decoration: none; }
+        .logo span { color: var(--primary); }
+        .nav-links { display: flex; gap: 20px; }
+        .nav-link { color: var(--text-muted); text-decoration: none; font-weight: 600; transition: 0.3s; }
+        .nav-link:hover { color: var(--primary); }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 4rem 2rem; text-align: center; }
+        
+        h1 { font-size: 3rem; margin-bottom: 1rem; }
+        .gold-text {
+            background: linear-gradient(to right, #ffd700, #ffaa00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+        }
+        .subtitle { color: var(--text-muted); font-size: 1.2rem; margin-bottom: 4rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+        /* Pricing Cards */
+        .pricing-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-bottom: 5rem; }
+        
+        .price-card {
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 2.5rem; width: 300px; text-align: left; position: relative; transition: transform 0.3s, border-color 0.3s;
+        }
+        .price-card:hover { transform: translateY(-10px); border-color: var(--gold); }
+        .badge { position: absolute; top: -12px; right: 20px; background: var(--gold); color: #000; font-weight: 700; padding: 4px 12px; border-radius: 50px; font-size: 0.8rem; }
+        .price { font-size: 2.5rem; font-weight: 700; color: var(--text-main); margin: 1.5rem 0; }
+        .period { font-size: 1rem; color: var(--text-muted); font-weight: 400; }
+        .features { list-style: none; margin-bottom: 2rem; }
+        .features li { margin-bottom: 10px; color: var(--text-muted); display: flex; align-items: center; gap: 10px; }
+        .check { color: var(--gold); }
+        
+        /* Buttons */
+        .btn-gold { 
+            display: block; width: 100%; padding: 12px; border-radius: 10px; 
+            background: linear-gradient(to right, #ffd700, #ffaa00); color: #000; 
+            font-weight: 700; text-decoration: none; text-align: center; transition: 0.3s; cursor: pointer; border: none; font-size: 1rem;
+        }
+        .btn-gold:hover { opacity: 0.9; transform: scale(1.02); }
+
+        .info-box {
+            background: rgba(255, 215, 0, 0.05);
+            border: 1px dashed var(--gold);
+            padding: 1rem;
+            border-radius: 10px;
+            color: #9ca3af;
+            font-size: 0.9rem;
+            margin-top: 3rem;
+            display: inline-block;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">🌊 Furina<span>Bot</span></a>
+        <div class="nav-links">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="commands.html" class="nav-link">Commands</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Unlock <span class="gold-text">Premium</span></h1>
+        <p class="subtitle">Get instant access to advanced features with Crypto.</p>
+
+        <div class="pricing-grid">
+            <div class="price-card">
+                <h3>Supporter</h3>
+                <div class="price">$3 <span class="period">/month</span></div>
+                <ul class="features">
+                    <li><span class="check">✔</span> Premium Badge</li>
+                    <li><span class="check">✔</span> Custom Role</li>
+                    <li><span class="check">✔</span> No prefix</li>
+                </ul>
+                <a href="https://furinabot.sell.app/product/furina-supporter-tier" target="_blank" class="btn-gold">Subscribe</a>
+            </div>
+
+            <div class="price-card popular" style="border-color: var(--gold);">
+                <div class="badge">POPULAR</div>
+                <h3>Server Pro</h3>
+                <div class="price">$5 <span class="period">/month</span></div>
+                <ul class="features">
+                    <li><span class="check">✔</span> <strong>All Supporter Features</strong></li>
+                    <li><span class="check">✔</span> Custom Bot</li>
+                    <li><span class="check">✔</span> Priority Support</li>
+                </ul>
+                <a href="https://furinabot.sell.app/product/product-1768870135" target="_blank" class="btn-gold">Subscribe</a>
+            </div>
+        </div>
+
+        <div class="info-box">
+            💎 Payments are processed automatically via Litecoin (LTC).
+        </div>
+    </div>
+
+</body>
+</html>
+
