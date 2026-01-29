@@ -6,7 +6,6 @@
     <title>Furina | Legal</title>
     <style>
         :root {
-            /* Furina Theme Palette */
             --bg-dark: #090b10;
             --bg-card: #131620;
             --bg-hover: #1c2130;
@@ -20,7 +19,6 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
         body { background-color: var(--bg-dark); color: var(--text-main); line-height: 1.6; }
 
-        /* Navigation */
         nav { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 5%; background: rgba(9, 11, 16, 0.95); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; backdrop-filter: blur(10px); }
         .logo { font-size: 1.5rem; font-weight: 800; color: var(--text-main); text-decoration: none; display: flex; align-items: center; gap: 10px; }
         .logo span { color: var(--primary); }
@@ -30,7 +28,6 @@
         .btn-pill { background: var(--primary-dim); color: var(--primary); padding: 8px 20px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.9rem; border: 1px solid transparent; transition: 0.3s; }
         .btn-pill:hover { background: var(--primary); color: #fff; box-shadow: 0 0 15px var(--primary-dim); }
 
-        /* Content */
         .container { max-width: 900px; margin: 0 auto; padding: 4rem 2rem; }
         .section-header { text-align: center; margin-bottom: 4rem; }
         .title-red { color: var(--primary); font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; }
@@ -102,11 +99,23 @@
             <p>Data is not used for analytics, profiling, advertising, or machine learning.</p>
 
             <h3>4. Data Storage and Retention</h3>
-            <ul>
-                <li><strong>Message content</strong> is not stored permanently. Any message-related data is kept only in short-term memory and cleared automatically.</li>
-                <li><strong>Member and presence data</strong> is processed in real time and not retained beyond operational needs.</li>
-                <li>No data is stored outside of Discord unless explicitly required for configuration (such as server settings).</li>
-            </ul>
+<ul>
+    <li>
+        <strong>Message content</strong> may be temporarily stored in a local JSON file
+        only for moderation-related features such as deleted message sniping.
+        Stored message content is limited in scope and automatically deleted after
+        a short retention period of 30 days or less.
+    </li>
+    <li>
+        <strong>Member and presence data</strong> is processed in real time and is not
+        retained beyond what is necessary for the bot’s operation.
+    </li>
+    <li>
+        <strong>Configuration data</strong> (such as server settings) may be stored to
+        allow persistent functionality. No data is stored or retained beyond what
+        is required for the bot to function.
+    </li>
+</ul>
 
             <h3>5. Data Sharing</h3>
             <p>The Bot does not sell, share, or distribute user data to third parties. Data is accessed only by the Bot to provide its services within Discord servers.</p>
